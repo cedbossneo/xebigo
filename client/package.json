@@ -1,0 +1,38 @@
+{
+  "name": "xebigo",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "start": "tarec start",
+    "build": "tarec build",
+    "test": "tarec mochaTest",
+    "test:watch": "tarec mochaTest -- -w",
+    "test:coverage": "tarec mochaTest --coverage",
+    "report": "tarec mochaTestReport -o",
+    "publish": "npm run build && gh-pages -d dist"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.15.1",
+    "immutable": "^3.8.1",
+    "react": "*",
+    "react-dom": "*",
+    "react-redux": "^4.4.5",
+    "react-router": "^2.8.1",
+    "react-router-redux": "^4.0.6",
+    "redux": "^3.6.0",
+    "redux-immutable": "^3.0.8",
+    "redux-thunk": "^2.1.0",
+    "socket.io": "^1.5.0",
+    "socket.io-client": "^1.5.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^0.11.0",
+    "tarec": "^1.4.1",
+    "tarec-plugin-mocha-test": "~2.0.0",
+    "tarec-plugin-sass": "~2.0.0"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "xebigo-server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Cedric Hauber",
+  "license": "MIT",
+  "dependencies": {
+    "kcors": "^1.3.0",
+    "koa": "next",
+    "koa-bodyparser": "^2.2.0",
+    "koa-router": "next",
+    "socket.io": "^1.5.0",
+    "thinky": "^2.3.7"
+  }
+}

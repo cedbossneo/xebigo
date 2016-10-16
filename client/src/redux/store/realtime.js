@@ -11,18 +11,17 @@ export function setupRealtime (store) {
     ws.on('connect', function open() {
         console.log('WS connected');
         isConnected = true;
-        Object.keys(onReconnect).forEach((key) => ws.emit(JSON.stringify(onReconnect[key])));
+        Object.keys(onReconnect).forEach((key) => ws.emit('REDUX_SSE', onReconnect[key]));
         onConnect.forEach((action) => sendMessage(action));
         onConnect = [];
     });
 
-    ws.on('event', function(data, flags) {
-        var action = JSON.parse(e.data);
+    ws.on('REDUX_SSE', function(action) {
         console.log('Receive action ', action);
         store.dispatch(action);
     });
 
-    ws.on('disconnect', function(data, flags) {
+    ws.on('disconnect', function() {
         console.log('WS disconnected');
         isConnected = false;
         ws = undefined;
@@ -36,7 +35,7 @@ var sendMessage = function (action) {
     if (action.persist) {
         onReconnect[action.type] = action;
     }
-    ws.emit(JSON.stringify(action))
+    ws.emit('REDUX_SSE', action)
 };
 
 export const rethinkMiddleware = store => next => action => {

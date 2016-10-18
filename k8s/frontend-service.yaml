@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    component: frontend
+  name: frontend
+spec:
+  sessionAffinity: ClientIP
+  ports:
+    - port: 80
+      targetPort: 80
+      name: external
+  selector:
+    component: frontend

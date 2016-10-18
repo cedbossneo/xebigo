@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    component: backend
+  name: backend
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        component: backend
+    spec:
+      containers:
+        - image: cedbossneo/xebigo-server:latest
+          imagePullPolicy: Always
+          name: backend
+          ports:
+            - containerPort: 8181

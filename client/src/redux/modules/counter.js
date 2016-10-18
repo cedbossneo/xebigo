@@ -10,7 +10,7 @@ export const watchCounter = () => {
 };
 
 export const incrementCounter = () => {
-    return axios.get('/api/counter/increment')
+    return axios.get(`${API_URL}/api/counter/increment`)
 };
 
 // Action Handlers

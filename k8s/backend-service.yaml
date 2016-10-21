@@ -5,7 +5,7 @@ metadata:
     component: backend
   name: backend
 spec:
-  sessionAffinity: ClientIP
+  sessionAffinity: None
   ports:
     - port: 8181
       name: http

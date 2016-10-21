@@ -1,6 +1,6 @@
 
 aliases:
-  - compo: ./src/components
+  - components: ./src/components
   - containers: ./src/containers
   - modules: ./src/redux/modules
   - utils: ./src/utils
@@ -15,7 +15,7 @@ build:
 
 proxies:
   - /api: http://localhost:8181
-  - /socket.io: http://localhost:8181
+  - /socket.io: http://localhost:8182
 
 define:
   - API_URL: ${API_URL:http://localhost:3000}

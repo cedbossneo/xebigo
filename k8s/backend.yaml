@@ -12,7 +12,7 @@ spec:
         component: backend
     spec:
       containers:
-        - image: cedbossneo/xebigo-server:latest
+        - image: cedbossneo/xebigo-server-api:latest
           imagePullPolicy: Always
           name: backend
           ports:

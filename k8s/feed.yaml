@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    component: feed
+  name: feed
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        component: feed
+    spec:
+      containers:
+        - image: cedbossneo/xebigo-server-feed:latest
+          imagePullPolicy: Always
+          name: feed
+          ports:
+            - containerPort: 8182

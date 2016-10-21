@@ -9,8 +9,8 @@ export const watchCounter = () => {
     };
 };
 
-export const incrementCounter = () => {
-    return axios.get(`${API_URL}/api/counter/increment`)
+export const incrementCounter = (increment) => {
+    axios.post(`${API_URL}/api/counter/increment`, {increment})
 };
 
 // Action Handlers

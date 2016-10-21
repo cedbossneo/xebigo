@@ -1,0 +1,21 @@
+{
+  "name": "xebigo-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Cedric Hauber",
+  "license": "MIT",
+  "scripts": {
+    "start": "node src/index.js",
+    "build": "webpack --config webpack.server.js"
+  },
+  "dependencies": {
+    "kcors": "^1.3.0",
+    "koa": "next",
+    "koa-bodyparser": "^2.2.0",
+    "koa-router": "next",
+    "rethinkdbdash": "^2.3.23"
+  },
+  "devDependencies": {
+    "webpack": "^1.13.2"
+  }
+}

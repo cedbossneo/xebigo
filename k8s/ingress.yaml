@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: xebigo
+spec:
+  rules:
+  - host: xebigo.cbnserver.com
+    http:
+      paths:
+      - path: /api
+        backend:
+          serviceName: backend
+          servicePort: 8181
+      - path: /socket.io
+        backend:
+          serviceName: feed
+          servicePort: 8182
+      - path: /
+        backend:
+          serviceName: frontend
+          servicePort: 80

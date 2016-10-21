@@ -39,6 +39,7 @@ var sendMessage = function (action) {
 };
 
 export const rethinkMiddleware = store => next => action => {
+    if (!action) return;
     if (!action.server)
         return next(action);
     if (isConnected) {

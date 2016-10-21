@@ -14,6 +14,6 @@ spec:
       containers:
         - image: cedbossneo/xebigo-client:latest
           imagePullPolicy: Always
-          name: backend
+          name: frontend
           ports:
             - containerPort: 80

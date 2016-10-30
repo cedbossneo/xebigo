@@ -1,11 +1,16 @@
-import React, {Component} from 'react';
+import * as React from 'react';
 import {bindActionCreators} from 'redux'
 import {connect} from 'react-redux';
-import {watchCounter, incrementCounter} from 'modules/counter';
+import {watchCounter, incrementCounter} from 'redux/modules/counter';
 import Counter from 'components/Counter';
 import IncrementButton from 'components/IncrementButton';
 
-export class CounterContainer extends Component {
+export interface CounterContainerProps {
+    watchCounter: Function
+    incrementCounter: (nb: number) => void
+    counter: number
+}
+export class CounterContainer extends React.Component<CounterContainerProps, {}> {
     componentDidMount() {
         this.props.watchCounter();
     }

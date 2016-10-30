@@ -1,8 +1,7 @@
-import React, {Component} from 'react';
-
-export default class Counter extends Component {
-
+import * as React from 'react';
+export default class Counter extends React.Component {
     render() {
-        return <div>Counter: {this.props.counter}</div>
+        return React.createElement("div", null, "Counter: ", this.props.counter);
     }
 }
+//# sourceMappingURL=Counter.js.map

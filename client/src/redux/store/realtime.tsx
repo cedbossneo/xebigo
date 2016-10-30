@@ -1,4 +1,4 @@
-import Client from 'socket.io-client';
+import * as Client from 'socket.io-client';
 
 var onReconnect = {};
 var onConnect = [];
@@ -6,7 +6,7 @@ var isConnected = false;
 var ws;
 
 export function setupRealtime (store) {
-    ws = new Client(API_URL);
+    ws = Client.connect("API_URL");
 
     ws.on('connect', function open() {
         console.log('WS connected');

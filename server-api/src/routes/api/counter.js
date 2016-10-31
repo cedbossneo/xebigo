@@ -1,37 +1,37 @@
-const router = require('koa-router')();
-const RethinkDB = require('../../r');
-
+import * as KoaRouter from 'koa-router';
+import RethinkDB from '../../rethinkdb';
+const router = new KoaRouter();
 router.post('/increment', (ctx) => {
-   return new Promise((resolve, reject) => {
-       RethinkDB.execute((r) => {
-           return r.table("counter").get(1).update({
-               value: r.row("value").add(ctx.request.body.increment)
-           }, {durability: 'soft'}).run().then(() => {
-               ctx.body = {status: 'ok'};
-               resolve();
-           }).catch(() => {
-               ctx.body = {status: 'ko'};
-               reject();
-           });
-       });
-   })
+    return new Promise((resolve, reject) => {
+        RethinkDB.execute((r, conn) => {
+            return r.table("counter").get(1).update((item) => {
+                var body = ctx.request.body;
+                item.getField("value").add(body.increment);
+            }, { durability: 'soft' }).run(conn).then(() => {
+                ctx.body = { status: 'ok' };
+                resolve();
+            }).catch(() => {
+                ctx.body = { status: 'ko' };
+                reject();
+            });
+        });
+    });
 });
-
 router.get('/init', (ctx) => {
     return new Promise((resolve, reject) => {
-        RethinkDB.execute((r) => {
-            return r.table("counter").delete().run().then(() => {
-                r.table("counter").insert({id: 1, value: 0}).run().then(() => {
-                    ctx.body = {status: 'ok'};
+        RethinkDB.execute((r, conn) => {
+            return r.table("counter").delete().run(conn).then(() => {
+                r.table("counter").insert({ id: 1, value: 0 }).run(conn).then(() => {
+                    ctx.body = { status: 'ok' };
                     resolve();
                 }).catch(() => {
-                    ctx.body = {status: 'ko'};
+                    ctx.body = { status: 'ko' };
                     reject();
                 });
             }).catch(() => {
             });
         });
-    })
+    });
 });
-
-module.exports = router;
+export default router;
+//# sourceMappingURL=counter.js.map

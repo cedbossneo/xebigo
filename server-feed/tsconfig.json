@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "allowUnreachableCode": true,
+    "target": "es6"
+  },
+  "typeRoots": [
+    "./node_modules/@types",
+    "./node_modules"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}

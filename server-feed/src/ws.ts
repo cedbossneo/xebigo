@@ -1,24 +1,22 @@
-"use strict";
-const Server = require('socket.io');
-const events_1 = require('./events');
+import * as Server from 'socket.io';
+import actions from './events';
+
 function setup() {
     var wss = new Server(8182);
     wss.on('connection', (client) => {
         client.on('REDUX_SSE', (action) => {
             console.log('Action received', action);
-            var res = events_1.default[action.type](action);
-            if (res instanceof Function) {
+            var res = actions[action.type](action);
+            if (res instanceof Function){
                 res((result) => {
                     client.emit('REDUX_SSE', result);
                 });
-            }
-            else
+            }else
                 client.emit('REDUX_SSE', res);
         });
         client.on('disconnect', () => console.log('Client disconnected'));
         console.log('Client connected');
     });
 }
-Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = setup;
-//# sourceMappingURL=ws.js.map
+
+export default setup;

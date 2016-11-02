@@ -1,13 +1,14 @@
-import * as Koa from 'koa';
-import * as BodyParser from 'koa-bodyparser';
-import routes from './routes/index';
-import RethinkDB from './rethinkdb';
+"use strict";
+const Koa = require('koa');
+const BodyParser = require('koa-bodyparser');
+const index_1 = require('./routes/index');
+const r_1 = require('./r');
 const app = new Koa();
-RethinkDB.connect();
+r_1.default.connect();
 // sessions
 app.keys = ['wescale'];
 app.use(BodyParser());
-app.use(routes.routes());
+app.use(index_1.default.routes());
 app.listen(8181);
 console.log('Listening on port 8181.');
 //# sourceMappingURL=index.js.map

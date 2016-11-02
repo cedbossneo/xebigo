@@ -2,7 +2,7 @@
 const Server = require('socket.io');
 const events_1 = require('./events');
 function setup() {
-    var wss = new Server(8182);
+    var wss = Server(8182);
     wss.on('connection', (client) => {
         client.on('REDUX_SSE', (action) => {
             console.log('Action received', action);

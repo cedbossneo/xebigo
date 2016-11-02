@@ -1,7 +1,7 @@
 import * as Koa from 'koa';
 import * as BodyParser from 'koa-bodyparser';
 import routes from './routes/index';
-import RethinkDB from './rethinkdb';
+import RethinkDB from './r';
 
 const app = new Koa();
 

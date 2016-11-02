@@ -15,14 +15,14 @@
     "rethinkdb": "^2.3.3"
   },
   "devDependencies": {
-    "@types/rethinkdb": "github:types/npm-rethinkdb",
     "@types/bluebird": "^3.0.35",
     "@types/koa": "^2.0.33",
     "@types/koa-bodyparser": "^3.0.20",
     "@types/koa-router": "^7.0.21",
     "@types/node": "^6.0.46",
+    "@types/rethinkdb": "github:types/npm-rethinkdb",
     "ts-loader": "^0.9.5",
-    "typescript": "next",
+    "typescript": "2.0.3",
     "webpack": "^1.13.2",
     "webpack-node-externals": "^1.5.4"
   }

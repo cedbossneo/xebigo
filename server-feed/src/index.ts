@@ -1,5 +1,5 @@
-import RethinkDB from './rethinkdb';
-import * as SocketIO from './ws';
+import RethinkDB from './r';
+import SocketIO from './ws';
 
 RethinkDB.connect();
-SocketIO.setup();
+SocketIO();

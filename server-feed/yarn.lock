@@ -1515,9 +1515,9 @@ tweetnacl@^0.14.3, tweetnacl@~0.14.0:
   version "0.14.3"
   resolved "https://registry.yarnpkg.com/tweetnacl/-/tweetnacl-0.14.3.tgz#3da382f670f25ded78d7b3d1792119bca0b7132d"
 
-typescript@next:
-  version "2.1.0-dev.20161031"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.1.0-dev.20161031.tgz#bcea4c7c0b6c9cf1f7bfa403bd64513c8fc782b0"
+typescript@2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.0.3.tgz#33dec9eae86b8eee327dd419ca050c853cabd514"
 
 uglify-js@~2.6.0:
   version "2.6.4"

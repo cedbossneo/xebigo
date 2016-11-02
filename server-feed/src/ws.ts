@@ -2,7 +2,7 @@ import * as Server from 'socket.io';
 import actions from './events';
 
 function setup() {
-    var wss = new Server(8182);
+    var wss = Server(8182);
     wss.on('connection', (client) => {
         client.on('REDUX_SSE', (action) => {
             console.log('Action received', action);

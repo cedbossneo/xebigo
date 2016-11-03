@@ -1,5 +1,5 @@
 "use strict";
-const counter_1 = require('./counter');
+const likes_1 = require('./likes');
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = counter_1.default;
+exports.default = likes_1.default;
 //# sourceMappingURL=index.js.map

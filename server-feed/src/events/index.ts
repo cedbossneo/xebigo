@@ -1,3 +1,3 @@
-import counter from './counter';
+import likes from './likes';
 
-export default counter;
+export default likes;

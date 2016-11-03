@@ -1,8 +1,8 @@
 import {combineReducers} from 'redux-immutable';
 
-import counter from 'redux/modules/counter';
+import likes from 'redux/modules/likes';
 import routing from 'redux/modules/routing';
 
 export default combineReducers({
-    counter, routing
+    likes, routing
 });

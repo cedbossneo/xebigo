@@ -1,22 +1,21 @@
-const webpack = require('webpack');
-const path = require('path');
-const fs = require('fs');
-
-var nodeModules = {};
-fs.readdirSync('node_modules')
-    .filter(function(x) {
-        return ['.bin'].indexOf(x) === -1;
-    })
-    .forEach(function(mod) {
-        nodeModules[mod] = 'commonjs ' + mod;
-    });
+var nodeExternals = require('webpack-node-externals');
 
 module.exports = {
-    entry: './src/index.js',
+    entry: './src/index.ts',
     target: 'node',
     output: {
         path: 'dist',
         filename: "server.bundle.js"
     },
-    externals: nodeModules
+    resolve: {
+        // Add `.ts` and `.tsx` as a resolvable extension.
+        extensions: ['', '.webpack.js', '.web.js', '.ts', '.tsx', '.js']
+    },
+    module: {
+        loaders: [
+            // all files with a `.ts` or `.tsx` extension will be handled by `ts-loader`
+            { test: /\.tsx?$/, loader: 'ts-loader' }
+        ]
+    },
+    externals: [nodeExternals()]
 };

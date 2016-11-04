@@ -6,8 +6,8 @@ const router = new Router();
 router.use('/api', api.routes(), api.allowedMethods());
 
 //For LoadTesting
-router.get('/loaderio-cde5cdb7ecf1c252bce652de6f873e5b.txt', (ctx) => {
-    ctx.body = "loaderio-cde5cdb7ecf1c252bce652de6f873e5b";
+router.get('/loaderio-032042978cbe5272898e7794a4a64e6f.txt', (ctx) => {
+    ctx.body = "loaderio-032042978cbe5272898e7794a4a64e6f";
 });
 
 export default router

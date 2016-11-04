@@ -6,7 +6,7 @@ var isConnected = false;
 var ws;
 
 export function setupRealtime (store) {
-    ws = Client.connect("API_URL");
+    ws = Client();
 
     ws.on('connect', function open() {
         console.log('WS connected');

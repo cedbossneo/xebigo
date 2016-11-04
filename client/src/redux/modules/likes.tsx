@@ -11,7 +11,7 @@ export const watchLikes = () => {
 };
 
 export const incrementLike = (increment) => {
-    axios.post(`API_URL/api/counter/increment`, {increment})
+    axios.post(`/api/likes/increment`, {increment})
 };
 
 // Action Handlers
